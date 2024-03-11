@@ -26,23 +26,29 @@ class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 187, 68, 241),
         centerTitle: true,
         title: Text("The Gridlock"),
         leading: ElevatedButton(onPressed: () {}, child: Icon(Icons.menu)),
       ),
+
+
       body: Column(
         children: [
           SizedBox(height: 15),
           Container(
               height: 350,
               width: double.infinity,
+
               child: GridView.builder(
                   itemCount: 9,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3),
-                  itemBuilder: (BuildContext context, int index) {
+                  crossAxisCount: 3),
+                  itemBuilder: (BuildContext context, int index) 
+                  
+                  { 
                     return Center(
                       child: GestureDetector(
                         onTap: () {
@@ -50,19 +56,19 @@ class _ScreenState extends State<Screen> {
                         },
                         child: Container(
                             decoration: BoxDecoration(
-
-
-
-
-                                
-                                      border: Border.all(color: Colors.black)),
+                                      border: Border.all(color: Colors.black)
+                                      ),
                             child: Center(
                               child: Text(displayXO[index]),
-                            )),
+                            )
+                            ),
                       ),
                     );
-                  }),
-              decoration: BoxDecoration(
+                  }
+                  ),
+
+
+                decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,

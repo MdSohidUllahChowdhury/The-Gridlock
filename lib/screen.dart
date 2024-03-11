@@ -8,6 +8,9 @@ class Screen extends StatefulWidget {
 }
 
 class _ScreenState extends State<Screen> {
+
+
+  bool ohTurn = true; //! The frist player is "O"
   List<String> displayXO = [
     '',
     '',
@@ -47,7 +50,12 @@ class _ScreenState extends State<Screen> {
                         },
                         child: Container(
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black)),
+
+
+
+
+                                
+                                      border: Border.all(color: Colors.black)),
                             child: Center(
                               child: Text(displayXO[index]),
                             )),
@@ -67,7 +75,19 @@ class _ScreenState extends State<Screen> {
 
   void tapted(int index) {
     setState(() {
-      displayXO[index] = 'O';
+      if (ohTurn){
+        displayXO[index] = 'O';
+      }else{
+        displayXO[index] = 'X';
+      }
     });
+  }
+
+  void checkWinner(){
+
+  }
+
+  void showWin(){
+
   }
 }

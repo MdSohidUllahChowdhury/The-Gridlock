@@ -21,7 +21,17 @@ var currentplayer = 'X';
 
 void pxo(i){
   setState(() {
-    grid[i] = currentplayer;
+
+    if(grid[i] == " "){
+      grid[i] = currentplayer;
+
+    currentplayer = currentplayer == 'X' ? 'O' : 'X';
+    }
+    
+    
+    //!NOTE
+     //? if currentplayer is "X" ? then turn to "O"
+    //?  if currentplayer is "O" : "X"
   });
 }
 
@@ -70,7 +80,7 @@ void reset (){
                   )),
               )),
           ),
-          ElevatedButton(onPressed: reset, child: Text('Play Agin!!'))
+          ElevatedButton(onPressed: reset, child: Text('Play Agin!!'),)
         ],
       ),
     );

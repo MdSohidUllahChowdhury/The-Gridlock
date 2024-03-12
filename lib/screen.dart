@@ -38,11 +38,12 @@ class _ScreenState extends State<Screen> {
       ),
 
 
-      body: Column(
+      body: Column(mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(height: 15),
+          
           Container(
-              height: 350,
+              height: 300,
               width: double.infinity,
 
               child: GridView.builder(
@@ -52,20 +53,22 @@ class _ScreenState extends State<Screen> {
                   itemBuilder: (BuildContext context, int index) 
                   
                   { 
-                    return Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          tapted(index);
-                        },
-                        child: Container(
-                            decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black)
-                                      ),
-                            child: Center(
-                              child: Text(displayXO[index]),
-                            )
-                            ),
-                      ),
+                    return GestureDetector(
+                      onTap: () {
+                        tapted(index);
+                      },
+                      child: Container(
+                          decoration:
+                           BoxDecoration(
+                           border: Border.all(color: const Color.fromARGB(255, 243, 94, 94))
+                                        ),
+                          
+                          child: Center(
+                            
+                          child: Text(displayXO[index],
+                          style: TextStyle(fontSize: 800,fontWeight: FontWeight.bold),),
+                          )
+                          ),
                     );
                   }
                   ),
@@ -76,7 +79,8 @@ class _ScreenState extends State<Screen> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [(Colors.yellow), (Colors.red)]),
-              )),
+              )
+              ),
         ],
       ),
     );
@@ -85,9 +89,9 @@ class _ScreenState extends State<Screen> {
   void tapted(int index) {
     
     setState(() {
-      if (ohTurn){
+      if (ohTurn && displayXO[index] == " "){
         displayXO[index] = 'O';
-      }else{
+      }else if (!ohTurn && displayXO[index] == " "){
         displayXO[index] = 'X';
       }
 
@@ -150,6 +154,8 @@ ShowWin(displayXO[0]);
   }
 
   void ShowWin( String winner){
+   
+    
 
   }
 

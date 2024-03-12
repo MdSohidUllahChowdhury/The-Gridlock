@@ -38,6 +38,7 @@ void pxo(i){
 
 void reset (){
   setState(() {
+    winner = " ";
     grid = [
   " ", " ", " ",
   " ", " ", " ",
@@ -45,7 +46,7 @@ void reset (){
 ];
   });
 }
-
+var winner = '';
 
 bool checkMove(i1,i2,i3,sing){
 if(grid[i1]==sing && grid[i2]== sing && grid[i3]== sing){
@@ -61,7 +62,9 @@ if(
   checkMove(0, 3, 6, currentSing) || checkMove(1, 4, 7, currentSing) || checkMove(2, 5, 8, currentSing) || //Colomn
   checkMove(0, 4, 8, currentSing) || checkMove(2, 4, 6, currentSing) //Digonal
 ) {
-print('$currentSing WON');
+setState(() {
+  winner = currentSing;
+});
 }
 
 }
@@ -80,7 +83,9 @@ print('$currentSing WON');
 
 
       body: Column(
-        children: [ SizedBox(height: 2,),
+        
+        children: [ if (winner != " ") Text('$winner WON THE GAME'),
+          SizedBox(height: 2,),
           Container( 
             height: 320,
             width: double.infinity,

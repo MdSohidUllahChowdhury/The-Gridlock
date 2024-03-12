@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace, avoid_print
 
 import 'package:flutter/material.dart';
 
@@ -33,6 +33,7 @@ void pxo(i){
      //? if currentplayer is "X" ? then turn to "O"
     //?  if currentplayer is "O" : "X"
   });
+  findWinner(grid[i]);
 }
 
 void reset (){
@@ -44,6 +45,28 @@ void reset (){
 ];
   });
 }
+
+
+bool checkMove(i1,i2,i3,sing){
+if(grid[i1]==sing && grid[i2]== sing && grid[i3]== sing){
+  return true;
+}
+return false;
+}
+
+void findWinner(currentSing){
+
+if(
+  checkMove(0, 1, 2, currentSing) || checkMove(3, 4, 5, currentSing) || checkMove(6, 7, 8, currentSing)|| //ROW
+  checkMove(0, 3, 6, currentSing) || checkMove(1, 4, 7, currentSing) || checkMove(2, 5, 8, currentSing) || //Colomn
+  checkMove(0, 4, 8, currentSing) || checkMove(2, 4, 6, currentSing) //Digonal
+) {
+print('$currentSing WON');
+}
+
+}
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +103,11 @@ void reset (){
                   )),
               )),
           ),
-          ElevatedButton(onPressed: reset, child: Text('Play Agin!!'),)
+          
+          ElevatedButton.icon(
+            onPressed: reset,
+            icon: Icon(Icons.refresh), 
+            label: Text("Replay"))
         ],
       ),
     );

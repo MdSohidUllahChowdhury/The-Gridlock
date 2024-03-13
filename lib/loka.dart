@@ -27,8 +27,6 @@ void pxo(i){
 
     currentplayer = currentplayer == 'X' ? 'O' : 'X';
     }
-    
-    
     //!NOTE
      //? if currentplayer is "X" ? then turn to "O"
     //?  if currentplayer is "O" : "X"
@@ -73,19 +71,36 @@ setState(() {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
+
       appBar: AppBar(
-        title: Text('The Grid Lock',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w900),),
+        title: Text('The Grid Lock',
+        style: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w900,
+          letterSpacing: 3.5),),
         toolbarHeight: 32,
         backgroundColor: Colors.amber,
         centerTitle: true,
       ),
 
 
-      body: Column(
+      body: Column( mainAxisAlignment: MainAxisAlignment.center,
         
-        children: [ if (winner != " ") Text('$winner WON THE GAME'),
+          children: [ if (winner != " ")
+           Card(margin: EdgeInsets.only(bottom: 45),
+            color: Color.fromARGB(201, 41, 34, 105),
+            elevation: 4,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(20, 20))),
+            child: Text('$winner WON THE GAME',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+              color: Colors.white),)),
+          
           SizedBox(height: 2,),
+          
           Container( 
             height: 320,
             width: double.infinity,

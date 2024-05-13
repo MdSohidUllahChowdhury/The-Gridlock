@@ -1,7 +1,5 @@
-// ignore_for_file: prefer_const_constructors, dead_code
 import 'package:flutter/material.dart';
 import 'package:tictactoe/loka.dart';
-//import 'package:tictactoe/screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Loka(),
-      
     );
   }
 }

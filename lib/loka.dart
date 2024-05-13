@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace, avoid_print
-
 import 'package:flutter/material.dart';
 
 class Loka extends StatefulWidget {
@@ -67,67 +65,70 @@ setState(() {
 
 }
 
-
-
   @override
   Widget build(BuildContext context) {
-    
+    final size = MediaQuery.sizeOf(context);
     return Scaffold(
-
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('The Grid Lock',
-        style: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w900,
-          letterSpacing: 3.5),),
-        toolbarHeight: 32,
         backgroundColor: Colors.amber,
+        toolbarHeight: 32,
+        title: const Text(
+          'The Grid Lock',
+          style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 3.5),),
         centerTitle: true,
       ),
-
-
-      body: Column( mainAxisAlignment: MainAxisAlignment.center,
-        
-          children: [ if (winner != " ")
-           Card(margin: EdgeInsets.only(bottom: 45),
-            color: Color.fromARGB(201, 41, 34, 105),
-            elevation: 4,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(20, 20))),
-            child: Text('$winner WON THE GAME',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
-              color: Colors.white),)),
-          
-          SizedBox(height: 2,),
-          
-          Container( 
-            height: 320,
-            width: double.infinity,
-            child: GridView.builder(padding: EdgeInsets.only(top: 12),
-            shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
-              ), 
-              itemCount: grid.length,
-            
-              itemBuilder: (context, index) => 
-              Material(color: Colors.green,
-                child: InkWell(
-                  splashColor: Colors.red,
-                  onTap: ()=> pxo(index),
-                  child: Center(
-                  child: Text(grid[index])
-                  )),
-              )),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          if (winner != " ")
+            Card(
+                color:const Color.fromARGB(201, 41, 34, 105),
+                //margin:const EdgeInsets.all(50),
+                elevation: 3,
+                shape:const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.elliptical(20, 20))),
+                child: Text(
+                  '$winner WON THE GAME',
+                  style:const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center
+                )),  
+          // ignore: sized_box_for_whitespace
+          Container(
+            height: size.height * .7,
+            child: Column(
+              children: [
+                GridView.builder(
+                    padding:const EdgeInsets.only(top: 12),
+                    shrinkWrap: true,
+                    gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8,
+                    ),
+                    itemCount: grid.length,
+                    itemBuilder: (context, index) => Material(
+                          color: Colors.green,
+                          child: InkWell(
+                              splashColor: Colors.red,
+                              onTap: () => pxo(index),
+                              child: Center(child: Text(grid[index]))),
+                        )),
+              const SizedBox(height: 10,),
+              ElevatedButton.icon(
+              onPressed: reset,
+              icon:const Icon(Icons.refresh),
+              label: const Text("Replay"))
+              ],
+            ),
           ),
-          
-          ElevatedButton.icon(
-            onPressed: reset,
-            icon: Icon(Icons.refresh), 
-            label: Text("Replay"))
         ],
       ),
     );

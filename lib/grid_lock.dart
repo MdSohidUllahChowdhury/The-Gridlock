@@ -84,8 +84,10 @@ class _GridLockState extends State<GridLock> {
   Widget build(BuildContext context) {
     
     final size = MediaQuery.sizeOf(context);
+    
     return Scaffold(
       backgroundColor: Colors.black,
+      
       appBar: AppBar(
         backgroundColor:const Color.fromARGB(255, 189, 211, 190),
         toolbarHeight: 32,
@@ -112,11 +114,12 @@ class _GridLockState extends State<GridLock> {
                 borderRadius: BorderRadius.all(Radius.circular(26))
               ),
               child: Text('$winner WON THE GAME',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22,
-                      color: Colors.white,
-                    ),
+                      style: const TextStyle(
+                       fontWeight: FontWeight.bold,
+                       letterSpacing: 2.5,
+                       fontSize: 22,
+                       color: Colors.white,
+                     ),
                     textAlign: TextAlign.center)
             ),
           // ignore: sized_box_for_whitespace
@@ -125,44 +128,50 @@ class _GridLockState extends State<GridLock> {
             child: Column(
               children: [
                 GridView.builder(
-                  
                     padding: const EdgeInsets.only(top: 12),
                     shrinkWrap: true,
                     gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       crossAxisSpacing: 8,
                       mainAxisSpacing: 8,
                     ),
                     itemCount: grid.length,
-                    itemBuilder: (context, index) => Material(
+                    itemBuilder: (context, index) => 
+                    Material(
                           color: const Color.fromARGB(255, 189, 211, 190),
                           child: InkWell(
                               splashColor: Colors.red,
+                              hoverColor: const Color.fromARGB(255, 68, 2, 88),
                               onTap: () => pxo(index),
                               child: Center(
                                 child: Text(grid[index],
-                                style:const TextStyle(
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold
-                                ),)
+                                  style:const TextStyle(
+                                   fontSize: 30,
+                                   fontWeight: FontWeight.bold
+                                   ),
+                                  )
                                 )
-                                ),
-                        )),
+                              ),
+                            )
+                          ),
                 const SizedBox(height: 20),
                 
                 ElevatedButton.icon(
-                  
                     onPressed: reset,
                     style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all<Size>(const Size(280, 45)),
-                    backgroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 21, 1, 68)),),
-                    icon: const Icon(Icons.refresh),
-                    label: const Text("Replay",style: TextStyle(color: Colors.white,)))
-              ],
+                     minimumSize: MaterialStateProperty.all<Size>(const Size(280, 45)),
+                     backgroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 21, 1, 68)),
+                     ),
+                    icon: const Icon(Icons.refresh,size: 35,color: Colors.white,),
+                    label: const Text("R e p l a y",style: TextStyle(color: Colors.white,))
+                  )
+                ],
+              ),
             ),
-          ),
+          
           const Mylinks(),
+
         ],
       ),
     );

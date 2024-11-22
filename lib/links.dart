@@ -15,7 +15,7 @@ class Mylinks extends StatelessWidget {
             builder: (context, followLink) => ElevatedButton(
                   onPressed: followLink,
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       const Color.fromARGB(255, 189, 211, 190),
                     ),
                   ),
@@ -33,7 +33,7 @@ class Mylinks extends StatelessWidget {
             builder: (context, followLink) => ElevatedButton(
                   onPressed: followLink,
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       const Color.fromARGB(255, 189, 211, 190),
                     ),
                   ),
@@ -51,7 +51,7 @@ class Mylinks extends StatelessWidget {
             builder: (context, followLink) => ElevatedButton(
                   onPressed: followLink,
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       const Color.fromARGB(255, 189, 211, 190),
                     ),
                   ),
@@ -69,7 +69,7 @@ class Mylinks extends StatelessWidget {
             builder: (context, followLink) => ElevatedButton(
                   onPressed: followLink,
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       const Color.fromARGB(255, 189, 211, 190),
                     ),
                   ),

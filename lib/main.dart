@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:tictactoe/grid_lock.dart';
+import 'package:the_gridlock/grid_lock.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
+  runApp((
+    MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GridLock(),
-    );
-  }
+      home:const GridLock(),
+      theme: ThemeData(
+        useMaterial3: true,
+        fontFamily: 'Game'
+      ),
+    )
+  ));
 }

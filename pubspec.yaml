@@ -11,9 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-  url_launcher: ^6.2.6
-  font_awesome_flutter: ^10.7.0
+  #url_launcher: ^6.2.6
+  font_awesome_flutter: ^10.9.1
   flutter_animate: ^4.5.1
+  url_launcher: ^6.3.2
+  google_fonts: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -27,7 +29,10 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
 
-  fonts:
-    - family: Game
-      fonts:
-        - asset: lib/assets/Lobster-Regular.ttf
+  # fonts:
+  #   - family: Game
+  #     fonts:
+  #       - asset: lib/assets/Lobster-Regular.ttf
+  #   - family: Honk
+  #     fonts:
+  #       - asset: lib/assets/Honk.ttf

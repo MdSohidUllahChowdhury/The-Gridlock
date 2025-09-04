@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:the_gridlock/links.dart';
 
 class GridLock extends StatefulWidget {
@@ -84,16 +85,20 @@ class _GridLockState extends State<GridLock> {
     final size = MediaQuery.sizeOf(context);
 
     return Scaffold(
-      backgroundColor: const Color(0xff00FF9C),
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor:const Color(0xffB6FFA1),
+        backgroundColor: Colors.black,
         elevation:15,
         toolbarHeight:45,
         centerTitle: true,
-        title: const Text(
+        title:  Text(
           'GRID LOCK',
           style: TextStyle(
-              fontSize:20,color: Colors.black, fontWeight: FontWeight.w700, letterSpacing: 4),
+              fontSize:20,
+              color: Colors.white, 
+              fontWeight: FontWeight.bold,
+              fontFamily: GoogleFonts.robotoSerif().fontFamily, 
+              letterSpacing: 4),
         ),
       ),
       body: Column(
@@ -134,7 +139,7 @@ class _GridLockState extends State<GridLock> {
                       itemCount: grid.length,
                       itemBuilder: (context, index)
                        => Material(
-                            color:const Color(0xffFFE700),
+                            color:const Color.fromARGB(255, 172, 171, 166),
                             child: InkWell(
                                 splashColor: Colors.red,
                                 hoverColor: const Color.fromARGB(255, 68, 2, 88),
@@ -146,12 +151,12 @@ class _GridLockState extends State<GridLock> {
                                       fontSize: 30, fontWeight: FontWeight.bold),
                                 ))),
                           )),
-                  const SizedBox(height: 20),
+                  const Expanded(child: SizedBox(height: 20)),
                   ElevatedButton.icon(
                       onPressed: reset,
                       style: ButtonStyle(
                         minimumSize:
-                            WidgetStateProperty.all<Size>(const Size(280, 45)),
+                            WidgetStateProperty.all<Size>(const Size(140, 45)),
                         backgroundColor: WidgetStateProperty.all<Color>(
                             const Color.fromARGB(255, 21, 1, 68)),
                       ),
@@ -163,13 +168,15 @@ class _GridLockState extends State<GridLock> {
                       label: const Text("R e p l a y",
                           style: TextStyle(
                             color: Colors.white,
-                          )))
+                          ))),
+
                 ],
               ),
             ),
           ),
-          const Mylinks(),
-          const SizedBox(height: 11),
+          const SizedBox(height:20),
+          SocialLinks(),
+          const SizedBox(height:30),
         ],
       ),
     );

@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:the_gridlock/grid_lock.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:the_gridlock/home.dart';
 
 void main() {
-  runApp((
-    MaterialApp(
+  runApp((MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:const GridLock(),
+      home: const GridLock(),
       theme: ThemeData(
         useMaterial3: true,
-        fontFamily: 'Game'
-      ),
-    )
-  ));
+        fontFamily: GoogleFonts.robotoSerif(
+          textStyle: const TextStyle(
+            color: Colors.white,
+            //fontWeight: FontWeight.bold,
+            fontSize: 18,
+            wordSpacing: 2
+          ),
+        ).fontFamily,
+      ))));
 }

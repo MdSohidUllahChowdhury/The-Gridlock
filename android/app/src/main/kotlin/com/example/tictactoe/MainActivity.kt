@@ -1,4 +1,4 @@
-package com.example.tictactoe
+package com.example.thegridlock
 
 import io.flutter.embedding.android.FlutterActivity
 

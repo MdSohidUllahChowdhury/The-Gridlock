@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:the_gridlock/links.dart';
+import 'package:the_gridlock/utils/links.dart';
 
 class GridLock extends StatefulWidget {
   final ThemeMode? themeMode;

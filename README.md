@@ -24,9 +24,10 @@ This project demonstrates the basics of Flutter app development, UI building, an
 
 ---
 lib/
-- │── main.dart          # Entry point
-- │── game_board.dart    # Game board UI and logic
-- │── utils/             # Helper classes/functions
+- │── main.dart          
+- │── game_board.dart    
+- │── utils/theme.dart   
+- │── utils/constants.dart             
 
 ---
 ## Getting Started

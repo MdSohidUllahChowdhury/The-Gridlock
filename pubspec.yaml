@@ -16,18 +16,25 @@ dependencies:
   flutter_animate: ^4.5.1
   url_launcher: ^6.3.2
   google_fonts: ^6.3.1
+  
+flutter_launcher_icons: 
+  
+  android: true
+  ios: true
+  image_path: "asset/logo.png"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
 
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - asset/
 
   # fonts:
   #   - family: Game

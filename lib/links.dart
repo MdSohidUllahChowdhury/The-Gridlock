@@ -34,7 +34,7 @@ class SocialLinks extends StatelessWidget {
             links[0],
             const Icon(
               FontAwesomeIcons.github,
-              color: Color(0xFF004643),
+              color: Colors.black,
               size: 14,
             )),
         const SizedBox(width: 10),
@@ -42,7 +42,7 @@ class SocialLinks extends StatelessWidget {
             links[1],
             const Icon(
               FontAwesomeIcons.linkedin,
-              color: Color(0xFF004643),
+              color: Colors.black,
               size: 14,
             )),
         const SizedBox(width: 10),
@@ -50,7 +50,7 @@ class SocialLinks extends StatelessWidget {
             links[2],
             const Icon(
               FontAwesomeIcons.instagram,
-              color: Color(0xFF004643),
+              color: Colors.black,
               size: 14,
             )),
         const SizedBox(width: 10),
@@ -58,7 +58,7 @@ class SocialLinks extends StatelessWidget {
             links[3],
             const Icon(
               FontAwesomeIcons.facebook,
-              color: Color(0xFF004643),
+              color: Colors.black,
               size: 14,
             )),
       ],

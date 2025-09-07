@@ -2,6 +2,10 @@
 
 A simple classic **Tic-Tac-Toe game** built with **Flutter**.  
 This project demonstrates the basics of Flutter app development, UI building, and interactive gameplay.  
+---
+
+ ![image alt](https://github.com/MdSohidUllahChowdhury/The-Gridlock/blob/master/asset/screens.png)
+
 
 ---
 
@@ -20,9 +24,9 @@ This project demonstrates the basics of Flutter app development, UI building, an
 
 ---
 lib/
-│── main.dart          # Entry point
-│── game_board.dart    # Game board UI and logic
-│── utils/             # Helper classes/functions
+- │── main.dart          # Entry point
+- │── game_board.dart    # Game board UI and logic
+- │── utils/             # Helper classes/functions
 
 ---
 ## Getting Started
